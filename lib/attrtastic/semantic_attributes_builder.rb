@@ -372,7 +372,7 @@ module Attrtastic
 
     def label_for_attribute(method)
       if record.class.respond_to?(:human_attribute_name)
-        record.class.human_attribute_name(method.to_s)
+        record.class.human_attribute_name(method.to_s).titleize
       else
         method.to_s.send(:humanize).send(:titleize)
       end
