@@ -15,11 +15,11 @@ class TestAttrtastic < TestCase
           <div class="legend"><span>User</span></div>
             <ol>
               <li class="attribute strong">
-                <span class="label">First Name</span>
+                <span class="label">First Name:</span>
                 <span class="value">John</span>
               </li>
               <li class="attribute">
-                <span class="label">Last Name</span>
+                <span class="label">Last Name:</span>
                 <span class="value">Doe</span>
               </li>
             </ol>
@@ -29,7 +29,7 @@ class TestAttrtastic < TestCase
             <div class="legend"><span>Contact</span></div>
             <ol>
               <li class="attribute">
-                <span class="label">Email</span>
+                <span class="label">Email:</span>
                 <span class="value">john@doe.com</span>
               </li>
             </ol>
@@ -40,11 +40,11 @@ class TestAttrtastic < TestCase
       actual = @template.semantic_attributes_for(@user) do |attr|
         @template.output_buffer << attr.attributes("User") do
           @template.output_buffer << (attr.attribute :first_name, :html => {:class => :strong}).to_s
-          @template.output_buffer << (attr.attribute :last_name).to_s
+          @template.output_buffer << (attr.attribute :last_name)
           @template.output_buffer << (attr.attribute :title).to_s
         end
         @template.output_buffer << attr.attributes(:name => "Contact") do
-          @template.output_buffer << (attr.attribute :email).to_s
+          @template.output_buffer << (attr.attribute :email)
         end
       end
 
@@ -58,11 +58,11 @@ class TestAttrtastic < TestCase
             <div class="legend"><span>User</span></div>
             <ol>
               <li class="attribute">
-                <span class="label">First Name</span>
+                <span class="label">First Name:</span>
                 <span class="value">John</span>
               </li>
               <li class="attribute">
-                <span class="label">Last Name</span>
+                <span class="label">Last Name:</span>
                 <span class="value">Doe</span>
               </li>
             </ol>
@@ -72,7 +72,7 @@ class TestAttrtastic < TestCase
             <div class="legend"><span>Contact</span></div>
             <ol>
               <li class="attribute">
-                <span class="label">Email</span>
+                <span class="label">Email:</span>
                 <span class="value">john@doe.com</span>
               </li>
             </ol>

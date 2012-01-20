@@ -11,7 +11,7 @@ class TestAttribute < TestCase
     should "generate output" do
       expected = html <<-EOHTML
         <li class="attribute">
-          <span class="label">Full Name</span>
+          <span class="label">Full Name:</span>
           <span class="value">Doe, John</span>
         </li>
       EOHTML
@@ -28,7 +28,7 @@ class TestAttribute < TestCase
     should "show attribute with :display_empty => true" do
       expected = html <<-EOHTML
         <li class="attribute">
-          <span class="label">Title</span>
+          <span class="label">Title:</span>
           <span class="value"></span>
         </li>
       EOHTML
@@ -42,7 +42,7 @@ class TestAttribute < TestCase
         Attrtastic.default_options[:display_empty] = true
         expected = html <<-EOHTML
           <li class="attribute">
-            <span class="label">Title</span>
+            <span class="label">Title:</span>
             <span class="value"></span>
           </li>
         EOHTML
@@ -56,18 +56,18 @@ class TestAttribute < TestCase
       should "properly format a String" do
         expected = html <<-EOHTML
           <li class="attribute">
-            <span class="label">Author</span>
+            <span class="label">Author:</span>
             <span class="value">Doe, John</span>
           </li>
         EOHTML
-        actual = @blog_builder.attribute(:author_full_name, :label => "Author")
+        actual = @blog_builder.attribute(:author_full_name, :label => "Author:")
         assert_equal expected, actual
       end
 
       should "properly format a Date" do
         expected = html <<-EOHTML
           <li class="attribute">
-          <span class="label">Birthday</span>
+          <span class="label">Birthday:</span>
             <span class="value">1953-06-03</span>
           </li>
         EOHTML
@@ -78,7 +78,7 @@ class TestAttribute < TestCase
       should "properly format a DateTime" do
         expected = html <<-EOHTML
           <li class="attribute">
-          <span class="label">Created At</span>
+          <span class="label">Created At:</span>
             <span class="value">Thu, 02 Jun 2011 12:06:42 +0000</span>
           </li>
         EOHTML
@@ -90,7 +90,7 @@ class TestAttribute < TestCase
         time = @user.time.strftime("%a, %d %b %Y %H:%M:%S %z")
         expected = html <<-EOHTML
           <li class="attribute">
-          <span class="label">Time</span>
+          <span class="label">Time:</span>
             <span class="value">#{time}</span>
           </li>
         EOHTML
@@ -101,7 +101,7 @@ class TestAttribute < TestCase
       should "properly format a Float" do
         expected = html <<-EOHTML
           <li class="attribute">
-          <span class="label">Float</span>
+          <span class="label">Float:</span>
             <span class="value">54424.220</span>
           </li>
         EOHTML
@@ -112,7 +112,7 @@ class TestAttribute < TestCase
       should "properly format a Decimal" do
         expected = html <<-EOHTML
           <li class="attribute">
-          <span class="label">Decimal</span>
+          <span class="label">Decimal:</span>
             <span class="value">4454.344</span>
           </li>
         EOHTML
@@ -123,7 +123,7 @@ class TestAttribute < TestCase
       should "properly format a Integer" do
         expected = html <<-EOHTML
           <li class="attribute">
-          <span class="label">Integer</span>
+          <span class="label">Integer:</span>
             <span class="value">45,453</span>
           </li>
         EOHTML
@@ -136,18 +136,18 @@ class TestAttribute < TestCase
       should "properly format a String" do
         expected = html <<-EOHTML
           <li class="attribute">
-            <span class="label">Author</span>
+            <span class="label">Author:</span>
             <span class="value">Doe, John</span>
           </li>
         EOHTML
-        actual = @blog_builder.attribute(:author_full_name, :label => "Author", :format => false)
+        actual = @blog_builder.attribute(:author_full_name, :label => "Author:", :format => false)
         assert_equal expected, actual
       end
 
       should "properly format a Date" do
         expected = html <<-EOHTML
           <li class="attribute">
-          <span class="label">Birthday</span>
+          <span class="label">Birthday:</span>
             <span class="value">1953-06-03</span>
           </li>
         EOHTML
@@ -158,7 +158,7 @@ class TestAttribute < TestCase
       should "properly format a DateTime" do
         expected = html <<-EOHTML
           <li class="attribute">
-          <span class="label">Created At</span>
+          <span class="label">Created At:</span>
             <span class="value">2011-06-02T12:06:42+00:00</span>
           </li>
         EOHTML
@@ -169,7 +169,7 @@ class TestAttribute < TestCase
       should "properly format a Time" do
         expected = html <<-EOHTML
           <li class="attribute">
-          <span class="label">Time</span>
+          <span class="label">Time:</span>
             <span class="value">#{@user.time}</span>
           </li>
         EOHTML
@@ -180,7 +180,7 @@ class TestAttribute < TestCase
       should "properly format a Float" do
         expected = html <<-EOHTML
           <li class="attribute">
-          <span class="label">Float</span>
+          <span class="label">Float:</span>
             <span class="value">54424.22</span>
           </li>
         EOHTML
@@ -191,7 +191,7 @@ class TestAttribute < TestCase
       should "properly format a Decimal" do
         expected = html <<-EOHTML
           <li class="attribute">
-          <span class="label">Decimal</span>
+          <span class="label">Decimal:</span>
             <span class="value">4454.3435</span>
           </li>
         EOHTML
@@ -202,7 +202,7 @@ class TestAttribute < TestCase
       should "properly format a Integer" do
         expected = html <<-EOHTML
           <li class="attribute">
-          <span class="label">Integer</span>
+          <span class="label">Integer:</span>
             <span class="value">45453</span>
           </li>
         EOHTML
@@ -215,14 +215,14 @@ class TestAttribute < TestCase
       should "output the return value of called template's method" do
         expected = html <<-EOHTML
           <li class="attribute">
-            <span class="label">Author</span>
+            <span class="label">Author:</span>
             <span class="value">Hello, my name is Doe, John</span>
           </li>
         EOHTML
         def @template.hello(name)
           "Hello, my name is #{name}"
         end
-        actual = @blog_builder.attribute(:author_full_name, :label => "Author", :format => :hello)
+        actual = @blog_builder.attribute(:author_full_name, :label => "Author:", :format => :hello)
         assert_equal expected, actual
       end
     end
@@ -230,19 +230,19 @@ class TestAttribute < TestCase
     should "show custom label" do
       expected = html <<-EOHTML
         <li class="attribute">
-          <span class="label">Name</span>
+          <span class="label">Name:</span>
           <span class="value">Doe, John</span>
         </li>
       EOHTML
 
-      actual = @user_builder.attribute(:full_name, :label => "Name")
+      actual = @user_builder.attribute(:full_name, :label => "Name:")
       assert_equal expected, actual
     end
 
     should "show custom value" do
       expected = html <<-EOHTML
         <li class="attribute">
-          <span class="label">Full Name</span>
+          <span class="label">Full Name:</span>
           <span class="value">Sir Doe, John</span>
         </li>
       EOHTML
@@ -254,7 +254,7 @@ class TestAttribute < TestCase
     should "use th custome value as hash key if it's a symbol and the attribute is a hash" do
       expected = html <<-EOHTML
         <li class="attribute">
-        <span class="label">Address</span>
+        <span class="label">Address:</span>
           <span class="value">Hellway 13</span>
         </li>
       EOHTML
@@ -266,7 +266,7 @@ class TestAttribute < TestCase
     should "use th custome value as a method it's a symbol and the attribute is not a hash" do
       expected = html <<-EOHTML
         <li class="attribute">
-        <span class="label">Blog</span>
+        <span class="label">Blog:</span>
           <span class="value">IT Pro Blog</span>
         </li>
       EOHTML
@@ -281,7 +281,7 @@ class TestAttribute < TestCase
 
       expected = html <<-EOHTML
         <li class="attribute">
-          <span class="label">Full Name</span>
+          <span class="label">Full Name:</span>
           <span class="value"></span>
         </li>
       EOHTML
@@ -307,7 +307,7 @@ class TestAttribute < TestCase
       should "generate output" do
         expected = html <<-EOHTML
         <li class="attribute">
-          <span class="label">Full Name</span>
+          <span class="label">Full Name:</span>
           <span class="value">John Doe!!!</span>
         </li>
         EOHTML
@@ -324,12 +324,12 @@ class TestAttribute < TestCase
       should "show custom label" do
         expected = html <<-EOHTML
         <li class="attribute">
-          <span class="label">Full Name</span>
+          <span class="label">Full Name:</span>
           <span class="value">John Doe!!!</span>
         </li>
         EOHTML
 
-        actual = @user_builder.attribute :label => "Full Name" do
+        actual = @user_builder.attribute :label => "Full Name:" do
           @user_builder.template.output_buffer << "John Doe"
           3.times do
             @user_builder.template.output_buffer << "!"

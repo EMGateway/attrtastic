@@ -14,15 +14,15 @@ class TestSemanticAttributesHelper < TestCase
           <div class="attributes">
             <ol>
               <li class="attribute">
-                <span class="label">Name</span>
+                <span class="label">Name:</span>
                 <span class="value">IT Pro Blog</span>
               </li>
               <li class="attribute">
-                <span class="label">Url</span>
+                <span class="label">Url:</span>
                 <span class="value">http://www.it.pro.blog</span>
               </li>
               <li class="attribute">
-                <span class="label">Author Full Name</span>
+                <span class="label">Author Full Name:</span>
                 <span class="value">Doe, John</span>
               </li>
             </ol>
