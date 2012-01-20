@@ -30,7 +30,7 @@ class TestAttributes < TestCase
             <span class="value">http://www.it.pro.blog</span>
           </li>
           <li class="attribute">
-            <span class="label">Author full name</span>
+            <span class="label">Author Full Name</span>
             <span class="value">Doe, John</span>
           </li>
         </ol>
@@ -78,7 +78,7 @@ class TestAttributes < TestCase
           <div class="attributes">
             <ol>
               <li class="attribute">
-                <span class="label">Full name</span>
+                <span class="label">Full Name</span>
                 <span class="value">Doe, John</span>
               </li>
               <li class="attribute">
@@ -99,7 +99,7 @@ class TestAttributes < TestCase
             <div class="legend"><span>Contact</span></div>
             <ol>
               <li class="attribute">
-                <span class="label">Full name</span>
+                <span class="label">Full Name</span>
                 <span class="value">Doe, John</span>
               </li>
               <li class="attribute">
@@ -148,7 +148,7 @@ class TestAttributes < TestCase
 
           expected = html <<-EOHTML
             <li class="attribute">
-              <span class="label">Full name</span>
+              <span class="label">Full Name</span>
               <span class="value">Doe, John</span>
             </li>
           EOHTML
@@ -187,7 +187,7 @@ class TestAttributes < TestCase
           <div class="attributes user">
             <ol>
               <li class="attribute">
-                <span class="label">Full name</span>
+                <span class="label">Full Name</span>
                 <span class="value">Doe, John</span>
               </li>
             </ol>
@@ -215,7 +215,7 @@ class TestAttributes < TestCase
 
           expected = html <<-EOHTML
             <li class="attribute">
-              <span class="label">Full name</span>
+              <span class="label">Full Name</span>
               <span class="value">Doe, John</span>
             </li>
           EOHTML
@@ -255,7 +255,7 @@ class TestAttributes < TestCase
           <div class="attributes user">
             <ol>
               <li class="attribute">
-                <span class="label">Full name</span>
+                <span class="label">Full Name</span>
                 <span class="value">Doe, John</span>
               </li>
             </ol>

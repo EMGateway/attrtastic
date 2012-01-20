@@ -11,7 +11,7 @@ class TestAttribute < TestCase
     should "generate output" do
       expected = html <<-EOHTML
         <li class="attribute">
-          <span class="label">Full name</span>
+          <span class="label">Full Name</span>
           <span class="value">Doe, John</span>
         </li>
       EOHTML
@@ -78,7 +78,7 @@ class TestAttribute < TestCase
       should "properly format a DateTime" do
         expected = html <<-EOHTML
           <li class="attribute">
-          <span class="label">Created at</span>
+          <span class="label">Created At</span>
             <span class="value">Thu, 02 Jun 2011 12:06:42 +0000</span>
           </li>
         EOHTML
@@ -158,7 +158,7 @@ class TestAttribute < TestCase
       should "properly format a DateTime" do
         expected = html <<-EOHTML
           <li class="attribute">
-          <span class="label">Created at</span>
+          <span class="label">Created At</span>
             <span class="value">2011-06-02T12:06:42+00:00</span>
           </li>
         EOHTML
@@ -242,7 +242,7 @@ class TestAttribute < TestCase
     should "show custom value" do
       expected = html <<-EOHTML
         <li class="attribute">
-          <span class="label">Full name</span>
+          <span class="label">Full Name</span>
           <span class="value">Sir Doe, John</span>
         </li>
       EOHTML
@@ -281,7 +281,7 @@ class TestAttribute < TestCase
 
       expected = html <<-EOHTML
         <li class="attribute">
-          <span class="label">Full name</span>
+          <span class="label">Full Name</span>
           <span class="value"></span>
         </li>
       EOHTML
@@ -307,7 +307,7 @@ class TestAttribute < TestCase
       should "generate output" do
         expected = html <<-EOHTML
         <li class="attribute">
-          <span class="label">Full name</span>
+          <span class="label">Full Name</span>
           <span class="value">John Doe!!!</span>
         </li>
         EOHTML
@@ -324,12 +324,12 @@ class TestAttribute < TestCase
       should "show custom label" do
         expected = html <<-EOHTML
         <li class="attribute">
-          <span class="label">Full name</span>
+          <span class="label">Full Name</span>
           <span class="value">John Doe!!!</span>
         </li>
         EOHTML
 
-        actual = @user_builder.attribute :label => "Full name" do
+        actual = @user_builder.attribute :label => "Full Name" do
           @user_builder.template.output_buffer << "John Doe"
           3.times do
             @user_builder.template.output_buffer << "!"

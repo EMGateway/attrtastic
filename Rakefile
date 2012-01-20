@@ -21,7 +21,7 @@ rescue LoadError
   end
 end
 
-require 'yard'
-YARD::Rake::YardocTask.new
+# require 'yard'
+# YARD::Rake::YardocTask.new
 
 task :default => :test

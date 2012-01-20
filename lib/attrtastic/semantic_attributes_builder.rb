@@ -374,7 +374,7 @@ module Attrtastic
       if record.class.respond_to?(:human_attribute_name)
         record.class.human_attribute_name(method.to_s)
       else
-        method.to_s.send(:humanize)
+        method.to_s.send(:humanize).send(:titleize)
       end
     end
 

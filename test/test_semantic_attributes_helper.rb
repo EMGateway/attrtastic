@@ -22,7 +22,7 @@ class TestSemanticAttributesHelper < TestCase
                 <span class="value">http://www.it.pro.blog</span>
               </li>
               <li class="attribute">
-                <span class="label">Author full name</span>
+                <span class="label">Author Full Name</span>
                 <span class="value">Doe, John</span>
               </li>
             </ol>

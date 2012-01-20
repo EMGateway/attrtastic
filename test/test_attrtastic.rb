@@ -15,11 +15,11 @@ class TestAttrtastic < TestCase
           <div class="legend"><span>User</span></div>
             <ol>
               <li class="attribute strong">
-                <span class="label">First name</span>
+                <span class="label">First Name</span>
                 <span class="value">John</span>
               </li>
               <li class="attribute">
-                <span class="label">Last name</span>
+                <span class="label">Last Name</span>
                 <span class="value">Doe</span>
               </li>
             </ol>
@@ -58,11 +58,11 @@ class TestAttrtastic < TestCase
             <div class="legend"><span>User</span></div>
             <ol>
               <li class="attribute">
-                <span class="label">First name</span>
+                <span class="label">First Name</span>
                 <span class="value">John</span>
               </li>
               <li class="attribute">
-                <span class="label">Last name</span>
+                <span class="label">Last Name</span>
                 <span class="value">Doe</span>
               </li>
             </ol>
