@@ -5,7 +5,7 @@ Gem::Specification.new do |s|
   s.name        = "attrtastic"
   s.version     = Attrtastic::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ["Boruta Mirosław"]
+  s.authors     = ["Boruta Miroslaw"]
   s.email       = ["boruta.miroslaw@gmail.com"]
   s.homepage    = "http://github.com/MBO/attrtastic"
   s.summary     = %q{Rails view helper for scaffolding show/index pages for objects}
